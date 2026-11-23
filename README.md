@@ -3,10 +3,12 @@
 A RESTful API built with **FastAPI** and containerized with **Docker** and **Docker Compose**.
 
 ## Tech Stack
-* **Framework:** FastAPI (Python)
-* **Database / ORM:** SQLAlchemy
-* **Validation:** Pydantic
-* **Containerization:** Docker & Docker Compose
+* **Lenguaje:** Python 3.13
+* **Framework:** FastAPI + Uvicorn
+* **Validación:** Pydantic v2
+* **ORM y Base de Datos:** SQLAlchemy + PostgreSQL 15 (con respaldo local en SQLite)
+* **Infraestructura:** Docker & Docker Compose
+
 
 ## Project Structure
 ```text
