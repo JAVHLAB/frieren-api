@@ -1,0 +1,4 @@
+.venv
+__pycache__
+grimorio.db
+.git

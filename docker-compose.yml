@@ -1,0 +1,27 @@
+version: '3.8'
+
+services:
+  db:
+    image: postgres:15
+    environment:
+      POSTGRES_USER: frieren
+      POSTGRES_PASSWORD: password_seguro
+      POSTGRES_DB: grimorio
+    ports:
+      - "5433:5432"
+    volumes:
+      - pgdata:/var/lib/postgresql/data
+
+  api:
+    build: .
+    ports:
+      - "8000:8000"
+    environment:
+      # Inyectamos la URL de conexión como variable de entorno
+      - DATABASE_URL=postgresql://frieren:password_seguro@db:5432/grimorio
+    depends_on:
+      - db
+
+volumes:
+  # Esto evita que los hechizos se borren si apagamos el contenedor de la BD
+  pgdata:
